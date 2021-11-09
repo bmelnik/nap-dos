@@ -28,5 +28,7 @@ RUN rm -rf /etc/ssl/nginx
 COPY nginx.conf /etc/nginx/
 COPY entrypoint.sh /root/
 COPY errors.grpc_conf /etc/nginx/conf.d/
+COPY server.cert /etc/ssl/certs/
+COPY server.key /etc/ssl/private/
 
 CMD /root/entrypoint.sh && tail -f /dev/null
